@@ -18,7 +18,7 @@ input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=text]::-m
 
 /* Layout */
 #header {position:relative;width:100%;background:#000;}
-#header > .inner {width:1024px;height:100px;margin:0 auto;}
+#header > .inner {width:980px;height:100px;margin:0 auto;}
 #header > .inner:after {content:"";display:block;clear:both;}
 #header .logo {float:left;margin:15px 0 0 50px;}
 #header .logo a {font-size:50px;color:#fff;}
@@ -28,7 +28,7 @@ input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=text]::-m
 .gnb > ul > li > a {font-size:20px;color:#fff;}
 .gnb > ul > li.router-link-exact-active > a {color:#ccc;}
 
-.contents {width:1024px;margin:50px auto;}
+.contents {width:980px;margin:50px auto;}
 
 .tab {}
 .tab .ctrlWrap {}

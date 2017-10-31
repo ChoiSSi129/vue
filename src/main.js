@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'expose-loader?$!expose-loader?jQuery!jquery'
+import {TweenMax, Power2, TimelineLite} from "gsap";
 
 Vue.config.productionTip = false
 

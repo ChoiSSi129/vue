@@ -1,7 +1,7 @@
 <template>
 	<header id="header">
 		<div class="inner">
-			<h1 class="logo"><router-link to="/">Logo</router-link></h1>
+			<h1 class="logo"><router-link to="/">MrChoiSSi</router-link></h1>
 			<div class="gnb">
 				<ul>
 					<router-link tag="li" to="/" exact><a>Index</a></router-link>
