@@ -16,7 +16,28 @@
 </template>
 
 <script>
+// 객체에 충돌할경우 컴포넌트 옵션이 우선순위
+// var mixin = {
+// 	methods: {
+// 		mixinTest: function(){
+// 			console.log("mixin")
+// 		}
+// 	}
+// }
+
+// 지정 디렉티브
+// 훅 함수 - bind, inserted, update, componentUpdated, unbind
+// directives: {
+//   focus: {
+//     // 디렉티브 정의
+//     inserted: function (el) {
+//       el.focus()
+//     }
+//   }
+// }
+
 export default {
+	// mixins: [mixin],
 	name: 'ProjectList',
 	data () {
 		return {
@@ -64,9 +85,6 @@ export default {
 			}
 		}
 	},
-	components: {
-
-	},
 
 	computed: {
 		// 계산된 속성중 일부가 변경된 경우에만 다시 실행
@@ -74,6 +92,7 @@ export default {
 			var vm = this
 			var yearFilter = vm.yearFilter
 			if(yearFilter === 0){
+				// this.mixinTest()
 				return vm.myData.list.slice().reverse()
 			} else{
 				return vm.myData.list.slice().reverse().filter(function(item){
@@ -85,11 +104,6 @@ export default {
 
 	methods: {
 		// 재 렌더링 할 때마다 실행
-		handleYearClick: function(yearID, index){
-			this.yearFilter = yearID
-			this.isActive = index;
-		},
-
 		setViewAlign: function(){
 			this.$nextTick(function(){
 				let $projectList = $(".projectList")
@@ -115,8 +129,25 @@ export default {
 					$projectList.css({ "height": viewOuterH * parseInt(idx / count) + viewOuterH })
 				})
 			})
+		},
+
+		handleYearClick: function(yearID, index){
+			this.yearFilter = yearID
+			this.isActive = index
 		}
 	},
+
+	created: function(){
+		// this.$http.get(url)
+		// .then(function(data){
+		// 	console.log(data)
+		// });
+	},
+
+	components: {
+
+	},
+
 	watch: {
 		// 비동기식 또는 시간이 많이 소요되는 조작을 수행하려는 경우에 가장 유용
 	}
