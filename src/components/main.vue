@@ -137,19 +137,62 @@ export default {
 		}
 	},
 
-	created: function(){
-		// this.$http.get(url)
-		// .then(function(data){
-		// 	console.log(data)
-		// });
-	},
-
 	components: {
 
 	},
 
 	watch: {
 		// 비동기식 또는 시간이 많이 소요되는 조작을 수행하려는 경우에 가장 유용
+	},
+
+	// Vue 라이프 사이클
+	// 1. Creation : 컴포넌트 초기화 단계
+	// Creation 단계에서 실행되는 훅(hook)들이 라이프사이클 중에서 가장 처음 실행된다. 
+	// 이 단계는 컴포넌트가 돔에 추가되기 전이다. 서버 렌더링에서도 지원되는 훅이다.
+	beforeCreate () {
+      console.log("beforeCreate")
+	},
+	created () {
+      console.log("created")
+	},
+	
+	// 2. Mounting : 돔(DOM) 삽입 단계
+	// Mounting 단계는 초기 렌더링 직전에 컴포넌트에 직접 접근할 수 있다. 서버렌더링에서는 지원하지 않는다. 
+	// 초기 랜더링 직전에 돔을 변경하고자 한다면 이 단계를 활용할 수 있다. 
+	// 그러나 컴포넌트 초기에 세팅되어야할 데이터 페치는 created 단계를 사용하는것이 낫다.
+	beforeMount() {
+		console.log("beforeMount")
+	},
+	mounted() {
+		this.$nextTick(function () {
+			// 모든 화면이 렌더링된 후 실행합니다.
+			console.log("mounted")
+		})
+	},
+
+	// 3. Updating : Diff 및 재 렌더링 단계
+	// 컴포넌트에서 사용되는 반응형 속성들이 변경되거나 어떤 이유로 재 렌더링이 발생되면 실행된다. 
+	// 디버깅이나 프로파일링 등을 위해 컴포넌트 재 렌더링 시점을 알고 싶을때 사용하면 된다. 
+	// 조심스럽지만, 꽤 유용하게 활용될 수 있는 단계이다. 서버렌더링에서는 호출되지 않는다.
+	beforeUpdate() {
+		console.log("beforeUpdate")
+	},
+	updated() {
+		this.$nextTick(function () {
+			// 모든 화면이 렌더링된 후 실행합니다.
+			console.log("updated")
+		})
+	},
+
+	// 4. Destruction : 해체 단계
+	// 이 훅은 해체(뷰 인스턴스 제거)되기 직전에 호출된다. 
+	// 컴포넌트는 원래 모습과 모든 기능들을 그대로 가지고 있다. 
+	// 이벤트 리스너를 제거하거나 reactive subscription을 제거하고자 한다면 이 훅이 제격이다. 서버 렌더링시 호출되지 않는다.
+	beforeDestroy() {
+		console.log("beforeDestroy")
+	},
+	destroyed() {
+		console.log("destroyed")
 	}
 }
 </script>
