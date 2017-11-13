@@ -36,8 +36,6 @@
 //   }
 // }
 
-import axios from 'axios';
-
 export default {
 	// mixins: [mixin],
 	name: 'ProjectList',
