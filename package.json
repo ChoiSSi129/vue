@@ -12,6 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^3.5.0",
+    "vuetable-2": "^1.7.0"
+  },
+  "dependencies": {
+    "accounting": "^0.4.1",
+    "moment": "^2.20.0",
+    "mongoose-paginate": "^5.0.3"
   }
 }

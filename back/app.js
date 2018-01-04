@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://localhost:27017/mrchoissi';
+var mongoDB = 'mongodb://localhost:27017/vuetable';
 mongoose.connect(mongoDB, {
 	useMongoClient: true
 });
@@ -18,8 +18,8 @@ db.once('open', function() {
 });
 
 var index = require('./routes/index');
-// var users = require('./routes/users');
-var data = require('./routes/data');
+var locationData = require('./routes/locationData');
+var galleryData = require('./routes/galleryData');
 
 var app = express();
 
@@ -36,8 +36,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-// app.use('/users', users);
-app.use('/api/data', data);
+app.use('/api/locationData', locationData);
+app.use('/api/galleryData', galleryData);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

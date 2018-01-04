@@ -1,11 +1,11 @@
 <template>
 	<header id="header">
 		<div class="inner">
-			<h1 class="logo"><router-link to="/">MrChoiSSi</router-link></h1>
+			<h1 class="logo"><router-link to="/">어드민</router-link></h1>
 			<div class="gnb">
 				<ul>
-					<router-link tag="li" to="/" exact><a>Index</a></router-link>
-					<router-link tag="li" to="/sub"><a>Sub</a></router-link>
+					<router-link tag="li" to="/" exact><a>Gallery</a></router-link>
+					<router-link tag="li" to="/location"><a>시공점</a></router-link>
 				</ul>
 			</div>
 		</div>
