@@ -3,6 +3,7 @@
 		<vuetable ref="vuetable"
 			api-url="/api/galleryData"
 			:fields="fields"
+			:per-page = "perPage"
 			pagination-path=""
 			@vuetable:pagination-data="onPaginationData"
 		></vuetable>
@@ -13,8 +14,6 @@
 </template>
 
 <script>
-import accounting from 'accounting'
-import moment from 'moment'
 import Vuetable from 'vuetable-2/src/components/Vuetable'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 
@@ -28,7 +27,8 @@ export default {
 		return{
 			fields: [
 				'모델명', '제품명', '라벨표', '자동차모델'
-            ]
+			],
+			perPage: 10
 		}
     },
 

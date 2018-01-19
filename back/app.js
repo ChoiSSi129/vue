@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://localhost:27017/vuetable';
+mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, {
 	useMongoClient: true
 });

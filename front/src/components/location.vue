@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import accounting from 'accounting'
-import moment from 'moment'
 import Vuetable from 'vuetable-2/src/components/Vuetable'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
 
@@ -37,9 +35,9 @@ export default {
 	methods: {
 		// transform (data) {
 		// 	let transformed = {}
-		// 	transformed.pagination = {
+		// 	transformed = {
 		// 		total: data.data.length,
-		// 		per_page: 10,
+		// 		per_page: data.per_page,
 		// 		current_page: 1,
 		// 		last_page: Math.ceil(data.data.length/10),
 		// 		next_page_url: data.next_page_url,
@@ -60,10 +58,10 @@ export default {
 		// 			타입: data[i].타입,
 		// 			lat: data[i].lat,
 		// 			lng: data[i].lng,
-		// 			이메일: data[i].이메일,
+		// 			이메일: data[i].이메일
 		// 		})
 		// 	}
-
+		// 	console.log(transformed)
 		// 	return transformed
 		// },
 	
