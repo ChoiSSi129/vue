@@ -1,16 +1,16 @@
 <template>
-    <div class="ui container">
-		<vuetable ref="vuetable"
-			api-url="/api/galleryData"
-			:fields="fields"
-			:per-page = "perPage"
-			pagination-path=""
-			@vuetable:pagination-data="onPaginationData"
-		></vuetable>
-		<vuetable-pagination ref="pagination"
-			@vuetable-pagination:change-page="onChangePage"
-		></vuetable-pagination>
-    </div>
+		<div class="ui container">
+				<vuetable ref="vuetable"
+				api-url="/api/galleryData"
+				:fields="fields"
+				:per-page = "perPage"
+				pagination-path=""
+				@vuetable:pagination-data="onPaginationData"
+				></vuetable>
+				<vuetable-pagination ref="pagination"
+				@vuetable-pagination:change-page="onChangePage"
+				></vuetable-pagination>
+		</div>
 </template>
 
 <script>
